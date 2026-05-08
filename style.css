@@ -1,5 +1,25 @@
 /* style.css */
 
+:root {
+
+    --bg: #f5f1fb;
+    --bg-alt: #ffffff;
+
+    --text: #2b2334;
+
+    --primary: #7a5ba6;
+    --primary-dark: #624587;
+
+    --accent: #bda8da;
+
+    --card: #ffffff;
+
+    --border: rgba(122, 91, 166, 0.12);
+
+    --shadow:
+        0 10px 30px rgba(72, 46, 110, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,346 +31,511 @@ html {
 }
 
 body {
+
     font-family: 'Inter', sans-serif;
-    background: #f7f5f2;
-    color: #1f1f1f;
+
+    background: var(--bg);
+
+    color: var(--text);
+
     line-height: 1.7;
+}
+
+/* HERO */
+
+.hero {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(31, 20, 44, 0.86), rgba(31, 20, 44, 0.90)),
+        url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
 }
 
 /* NAVBAR */
 
 .navbar {
+
     width: 100%;
+
     padding: 28px 8%;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    position: relative;
-    z-index: 20;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
+
     color: white;
+
+    font-size: 1.6rem;
+
     font-family: 'Playfair Display', serif;
+
+    font-weight: 700;
 }
 
 .nav-links {
+
     display: flex;
+
     gap: 28px;
+
     list-style: none;
 }
 
 .nav-links a {
+
+    color: rgba(255,255,255,0.92);
+
     text-decoration: none;
-    color: rgba(255,255,255,0.9);
-    font-size: 0.95rem;
+
     transition: 0.3s ease;
+
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
     color: white;
 }
 
-/* HERO */
-
-.hero {
-    min-height: 100vh;
-    background:
-        linear-gradient(rgba(15,15,15,0.65), rgba(15,15,15,0.75)),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
+/* HERO CONTENT */
 
 .hero-content {
+
     min-height: calc(100vh - 100px);
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    padding: 0 8%;
+
     gap: 80px;
-    position: relative;
-    z-index: 10;
+
+    padding: 0 8%;
 }
 
 .hero-text {
+
     flex: 1;
+
     color: white;
 }
 
 .tagline {
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
+    color: #d8c8f0;
+
     font-size: 0.8rem;
-    color: #d7c4a3;
+
     margin-bottom: 20px;
 }
 
 .hero h1 {
+
     font-size: 5rem;
+
     line-height: 1;
+
     margin-bottom: 30px;
+
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
 }
 
 .hero-description {
-    max-width: 650px;
+
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.92);
+
     margin-bottom: 35px;
 }
 
 .hero-buttons {
+
     display: flex;
+
     gap: 20px;
 }
 
 .btn {
+
     padding: 14px 28px;
+
     border-radius: 50px;
+
     text-decoration: none;
-    font-weight: 500;
+
+    font-weight: 600;
+
     transition: 0.3s ease;
 }
 
 .primary-btn {
-    background: #c6a56a;
+
+    background: var(--primary);
+
     color: white;
 }
 
 .primary-btn:hover {
-    background: #b39256;
+
+    background: var(--primary-dark);
+
     transform: translateY(-2px);
 }
 
 .secondary-btn {
+
     border: 1px solid rgba(255,255,255,0.3);
+
     color: white;
 }
 
 .secondary-btn:hover {
+
     background: rgba(255,255,255,0.1);
 }
 
 .hero-image img {
+
     width: 360px;
+
     height: 360px;
+
     object-fit: cover;
+
     border-radius: 24px;
-    border: 4px solid rgba(255,255,255,0.2);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+
+    border: 4px solid rgba(255,255,255,0.18);
+
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
 }
 
 /* SECTIONS */
 
 .section {
+
     padding: 110px 8%;
 }
 
 .alt-section {
-    background: white;
+
+    background: var(--bg-alt);
 }
 
 .container {
+
     max-width: 1300px;
+
     margin: auto;
 }
 
+/* TITLES */
+
 .section-title {
+
     margin-bottom: 60px;
 }
 
 .section-title span {
+
     text-transform: uppercase;
+
     letter-spacing: 3px;
-    color: #9a7a43;
-    font-size: 0.8rem;
+
+    color: var(--primary);
+
+    font-size: 0.82rem;
 }
 
 .section-title h2 {
+
     font-size: 3rem;
-    font-family: 'Playfair Display', serif;
+
     margin-top: 10px;
+
+    font-family: 'Playfair Display', serif;
 }
 
 /* ABOUT */
 
 .about-grid {
+
     display: grid;
+
     grid-template-columns: 2fr 1fr;
+
     gap: 60px;
 }
 
 .about-text p {
+
     margin-bottom: 24px;
+
     font-size: 1.05rem;
 }
 
 .education-card {
+
     background: white;
+
     padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
     height: fit-content;
 }
 
 .education-card h3 {
+
     margin-bottom: 30px;
+
     font-size: 1.5rem;
+
     font-family: 'Playfair Display', serif;
 }
 
 .edu-item {
-    margin-bottom: 25px;
+
+    margin-bottom: 24px;
 }
 
-.edu-item h4 {
-    margin-bottom: 6px;
+/* TIMELINE */
+
+.timeline {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.timeline-item {
+
+    background: white;
+
+    border-left: 5px solid var(--primary);
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+.timeline-item h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 1.35rem;
+
+    font-family: 'Playfair Display', serif;
+}
+
+.timeline-date {
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
 }
 
 /* CARDS */
 
 .card-grid,
-.journalism-grid,
 .books-grid {
+
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
     gap: 30px;
 }
 
 .card,
-.journalism-card,
 .book-card,
 .poetry-card,
 .award-item {
-    background: #fff;
+
+    background: white;
+
     padding: 35px;
+
     border-radius: 22px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+
+    box-shadow: var(--shadow);
+
     transition: 0.3s ease;
 }
 
 .card:hover,
-.journalism-card:hover,
 .book-card:hover {
+
     transform: translateY(-6px);
 }
 
 .card h3,
-.journalism-card h3,
 .book-card h3,
 .poetry-card h3,
 .award-item h3 {
+
     margin-bottom: 14px;
-    font-size: 1.4rem;
+
+    font-size: 1.45rem;
+
     font-family: 'Playfair Display', serif;
 }
 
 .card-subtitle {
-    color: #8b6a39;
+
+    color: var(--primary);
+
     margin-bottom: 18px;
-    font-weight: 500;
+
+    font-weight: 600;
 }
 
 .card a,
-.journalism-card a,
 .book-card {
-    color: #8b6a39;
+
     text-decoration: none;
-    font-weight: 600;
+
+    color: var(--primary);
+
+    font-weight: 700;
 }
 
 .book-card {
     display: block;
 }
 
+/* POETRY */
+
 .poetry-wrapper,
 .awards-list {
+
     display: grid;
+
     gap: 25px;
 }
 
 /* FOOTER */
 
 .footer {
-    background: #141414;
+
+    background: #1f1629;
+
     color: white;
-    padding: 70px 8%;
+
     text-align: center;
+
+    padding: 80px 8%;
 }
 
 .footer h2 {
-    font-size: 2.5rem;
+
+    font-size: 2.7rem;
+
     margin-bottom: 15px;
+
     font-family: 'Playfair Display', serif;
 }
 
 .footer p {
-    color: rgba(255,255,255,0.8);
+
+    color: rgba(255,255,255,0.82);
 }
 
 .footer-note {
-    margin-top: 25px;
+
+    margin-top: 24px;
+
     font-size: 0.9rem;
+
     color: rgba(255,255,255,0.5);
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 980px) {
+@media (max-width: 1000px) {
 
     .hero-content {
+
         flex-direction: column-reverse;
+
         text-align: center;
+
         padding-top: 40px;
+
         padding-bottom: 60px;
     }
 
     .hero h1 {
-        font-size: 3.5rem;
-    }
 
-    .hero-image img {
-        width: 280px;
-        height: 280px;
+        font-size: 3.7rem;
     }
 
     .hero-buttons {
+
         justify-content: center;
     }
 
     .about-grid {
+
         grid-template-columns: 1fr;
     }
 
     .nav-links {
+
         display: none;
+    }
+
+    .hero-image img {
+
+        width: 280px;
+
+        height: 280px;
     }
 }
 
 @media (max-width: 640px) {
 
     .hero h1 {
-        font-size: 2.7rem;
+
+        font-size: 2.8rem;
     }
 
     .section-title h2 {
-        font-size: 2.2rem;
-    }
 
-    .hero-description {
-        font-size: 1rem;
+        font-size: 2.1rem;
     }
 
     .card,
-    .journalism-card,
     .book-card,
     .poetry-card,
-    .award-item {
+    .award-item,
+    .timeline-item {
+
         padding: 28px;
     }
 }
